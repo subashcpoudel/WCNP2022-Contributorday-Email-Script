@@ -23,9 +23,21 @@ sender_email_id_password = os.getenv('sender_email_id_password')
 for index, row in contributors.iterrows():
 
     subject = "WordCamp Nepal 2022 - Contributor Day"
-    body = "This is an email with attachment sent from Python"
+    body = "Dear "+row[0]+"""
+
+Thank you for contributing to WordCamp Nepal 2022. 
+Contributors such as you, are the reason why WordPress is the leading Content Management System in the world today. We hope you will continue to contribute and help WordPress grow. 
+
+Please accept this e-certificate attached to this email, as a token of our appreciation.
+We hope to see you guys again next year and look forward to hearing your contribution stories.
+
+With Love,
+Racase Lawaju / Subash Poudel / Entire Team
+WordCamp Nepal 2022 Organizing Committee
+"""
+
     sender_email = "nepal@wordcamp.org"
-    receiver_email = row[4]
+    receiver_email = row[1]
 
     # Create a multipart message and set headers
     message = MIMEMultipart()
